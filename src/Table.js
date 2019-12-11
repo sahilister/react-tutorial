@@ -6,57 +6,35 @@ const TableHeader = () => {
             <tr>
                 <th>Name</th>
                 <th>Job</th>
+                <th>Remove</th>
             </tr>
         </thead>
     )
 }
 
-// const TableBody = props => {
-//     const rows = props.charData.map((row, index) => {
-//       return (
-//         <tr key={index}>
-//           <td>{row.name}</td>
-//           <td>{row.job}</td>
-//         </tr>
-//       )
-//     })
-  
-//     return <tbody>{rows}</tbody>
-//   }
-
 const TableBody = props => {
-    const rows = props.characterData.map((row, index) => {
-      return (
-        <tr key={index}>
-          <td>{row.name}</td>
-          <td>{row.job}</td>
-        </tr>
-      )
-    })
-  
-    return <tbody>{rows}</tbody>
-  }
-
-// class Table extends Component {
-//     render() {
-//         const { charData } = this.props
-//         return(
-//             <table>
-//                 <TableHeader />
-//                 <TableBody charData={charData} />
-//             </table>
-//         )
-//     }
-// }
+  const rows = props.charData.map((row, index) => {
+    return (
+      <tr key={index}>
+        <td>{row.name}</td>
+        <td>{row.job}</td>
+        <td>
+          <button onClick={() => props.removeCharacter(index)}>Delete</button>
+        </td>
+      </tr>
+    )
+  })
+  return <tbody>{rows}</tbody>
+}
 
 class Table extends Component {
     render() {
-      const { characterData } = this.props
-  
+      const { charData, removeCharacter } = this.props
+      console.log(charData)
       return (
         <table>
           <TableHeader />
-          <TableBody characterData={characterData} />
+          <TableBody charData={ charData } removeCharacter={ removeCharacter }/>
         </table>
       )
     }
