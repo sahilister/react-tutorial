@@ -8,3 +8,4 @@ React App with add and delete functionality.
 
 - [Tania Rascia's Getting Started with React - An Overview and Walkthrough Tutorial](https://www.taniarascia.com/getting-started-with-react/)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Primitive CSS](https://taniarascia.github.io/primitive/css/main.css)
